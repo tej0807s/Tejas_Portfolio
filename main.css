@@ -401,7 +401,7 @@ textarea{
     outline-color: #fd57bf;
 }
 
-input[type="submit"]{
+form button{
     width: initial;
     background-color: #fd57bf;
     color: #eee;
@@ -411,7 +411,7 @@ input[type="submit"]{
     transition: color 650ms;
 }
 
-input[type="submit"]:hover{
+form button:hover{
     color: #221e3f;
     background-color: #ffe838;
 }

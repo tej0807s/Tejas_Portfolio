@@ -64,7 +64,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/tejas__0807/" target="_blank" class="icon-link">
+                            <a href="https://www.instagram.com/tejjjjjj__0807/" target="_blank" class="icon-link">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
@@ -188,7 +188,7 @@
                 <h1>Contact</h1>
                 <h6>Let's work togetger</h6>
             </div>
-            <form action="https://formsubmit.co/rohankumbhani76@email.com" method="post" data-aos="fade-up" data-aos-delay="300">
+            <form name="submit-to-google-sheet" method="post" data-aos="fade-up" data-aos-delay="300">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name..." required>
                 <label for="email">Email:</label>
@@ -203,6 +203,7 @@
                 <textarea name="subject" id="subject" cols="10" rows="10"></textarea>
                 <button type="submit" value="Submit">Submit</button>
             </form>
+            <span id="msg"></span>
         </div>
     </section>
 
@@ -212,9 +213,27 @@
         </div>
         <p>&copy; 2022 By Tejas Kumbhani</p>
     </footer>
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxt5LR3AsC0W8MFF3e1ZhXbv6dyV1AWrAUq-A3rKCjh35HbzVKcNU57UB9lPhjjdUBv/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Thank You For Your Contact!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js"></script>
 </body>
-
 </html>

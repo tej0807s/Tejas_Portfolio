@@ -415,6 +415,12 @@ form button:hover{
     color: #221e3f;
     background-color: #ffe838;
 }
+span{
+    display: block;
+    color: #fd57bf;
+    text-align: center;
+    font-size: medium;
+}
 /*End contact*/
 
 /*Start footer*/

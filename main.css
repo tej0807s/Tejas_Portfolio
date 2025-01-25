@@ -74,6 +74,10 @@ img{
     background-color: rgba(255, 255, 255, 0.75);
 }
 
+.footerP {
+    display: inline; 
+}
+
 .section-heading h1::before{
     width: 10rem;
     height: 3px;
